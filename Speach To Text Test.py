@@ -1,6 +1,7 @@
 # Python program to translate
 # speech to text and text to speech
- 
+from vosk import Model, KaldiRecognizer
+import pyaudio
  
 import speech_recognition as sr
 import pyttsx3
@@ -41,14 +42,14 @@ def TextSpeak():
             audio2 = r.listen(source2)
              
             # Using google to recognize audio
-            MyText = r.recognize_google(audio2)
-            MyText = MyText.lower()
+            MyText = r.recognize_sphinx(audio2)
+            #MyText = MyText.lower()
  
             print("Did you say ",MyText)
-            SpeakText(MyText)
+#            SpeakText(MyText)
              
     except sr.UnknownValueError:
-        print("unknown error occurred")
+        print("'-'")
 
 while(True):
     TextSpeak()
