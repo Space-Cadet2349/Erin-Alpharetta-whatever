@@ -1,0 +1,7 @@
+Required modules (pip install):
+
+vosk
+pyaudio
+speechrecognition
+pyttsx3
+pocketsphinx
